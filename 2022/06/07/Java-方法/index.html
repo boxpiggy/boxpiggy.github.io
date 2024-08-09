@@ -1,0 +1,832 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar.png">
+  <link rel="icon" href="/img/avatar.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Neo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Java 方法方法的返回值 是指我们获取到的某个方法体中的代码执行后产生的结果！（前提是该方法可能产生结果）。返回值的作用是接收出结果，使得它可以用于其他的操作！ 按照方法的返回值和参数类型将方法分为以下几种：  无参数无返回值的方法 有参数无返回值的方法 有返回值无参数的方法 有返回值有参数的方法  静态方法和实例方法有何不同？1）调用方式在外部调用静态方法时，可以使用类名.方法名的方式，也可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 方法">
+<meta property="og:url" content="http://example.com/2022/06/07/Java-%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="KingShit">
+<meta property="og:description" content="Java 方法方法的返回值 是指我们获取到的某个方法体中的代码执行后产生的结果！（前提是该方法可能产生结果）。返回值的作用是接收出结果，使得它可以用于其他的操作！ 按照方法的返回值和参数类型将方法分为以下几种：  无参数无返回值的方法 有参数无返回值的方法 有返回值无参数的方法 有返回值有参数的方法  静态方法和实例方法有何不同？1）调用方式在外部调用静态方法时，可以使用类名.方法名的方式，也可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pub-e9bde05ffea74978a0ce3b387e7ee1fd.r2.dev/2024/08/%E6%96%B9%E6%B3%95%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8.png">
+<meta property="og:image" content="https://pub-e9bde05ffea74978a0ce3b387e7ee1fd.r2.dev/2024/08/%E9%BB%98%E8%AE%A4%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E5%99%A8.png">
+<meta property="og:image" content="https://pub-e9bde05ffea74978a0ce3b387e7ee1fd.r2.dev/2024/08/%E6%9C%89%E5%8F%82%E6%9E%84%E9%80%A0%E5%99%A8.png">
+<meta property="article:published_time" content="2022-06-07T09:52:00.000Z">
+<meta property="article:modified_time" content="2024-08-09T07:26:05.469Z">
+<meta property="article:author" content="Neo">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pub-e9bde05ffea74978a0ce3b387e7ee1fd.r2.dev/2024/08/%E6%96%B9%E6%B3%95%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Java 方法 - KingShit</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Neo&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Java 方法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-06-07 17:52" pubdate>
+          2022年6月7日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          21 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Java 方法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Java-方法"><a href="#Java-方法" class="headerlink" title="Java 方法"></a>Java 方法</h1><p><strong>方法的返回值</strong> 是指我们获取到的某个方法体中的代码执行后产生的结果！（前提是该方法可能产生结果）。返回值的作用是接收出结果，使得它可以用于其他的操作！</p>
+<p>按照方法的返回值和参数类型将方法分为以下几种：</p>
+<ul>
+<li>无参数无返回值的方法</li>
+<li>有参数无返回值的方法</li>
+<li>有返回值无参数的方法</li>
+<li>有返回值有参数的方法</li>
+</ul>
+<h2 id="静态方法和实例方法有何不同？"><a href="#静态方法和实例方法有何不同？" class="headerlink" title="静态方法和实例方法有何不同？"></a>静态方法和实例方法有何不同？</h2><h3 id="1）调用方式"><a href="#1）调用方式" class="headerlink" title="1）调用方式"></a>1）调用方式</h3><p>在外部调用静态方法时，可以使用<code>类名.方法名</code>的方式，也可以使用<code>对象.方法名</code>的方式[1]，而实例方法只有<code>对象.方法名</code>这种方式。也就是说，<strong>调用静态方法可以无需创建对象</strong> 。</p>
+<h3 id="2）访问类成员是否存在限制"><a href="#2）访问类成员是否存在限制" class="headerlink" title="2）访问类成员是否存在限制"></a>2）访问类成员是否存在限制</h3><ul>
+<li>静态方法在访问本类的成员时，<strong>只允许访问静态成员</strong>（即静态成员变量和静态方法），<strong>不允许访问实例成员</strong>（即实例成员变量和实例方法）</li>
+<li>实例方法不存在以上这个限制。</li>
+</ul>
+<p>[1] 不建议使用 <code>对象.方法名</code> 的方式来调用静态方法，容易混淆。静态方法不属于类的某个对象而是属于这个类。</p>
+<h2 id="静态方法为何不能调用非静态成员"><a href="#静态方法为何不能调用非静态成员" class="headerlink" title="静态方法为何不能调用非静态成员?"></a>静态方法为何不能调用非静态成员?</h2><ul>
+<li>静态方法是属于类的，在类加载的时候就会分配内存，可以通过类名直接访问。而非静态成员属于实例对象，只有在对象实例化之后才存在，需要通过类的实例对象去访问。</li>
+<li>在类的非静态成员不存在的时候静态方法就已经存在了，此时调用在内存中还不存在的非静态成员，属于非法操作。</li>
+</ul>
+<h1 id="方法重载和重写"><a href="#方法重载和重写" class="headerlink" title="方法重载和重写"></a>方法重载和重写</h1><p><strong>重载：</strong>java 允许同一个类中，多个同名方法的存在，但要求形参列表不一致。这样，同样的一个方法能够根据输入数据的不同，做出不同的处理。（好处：减轻了起名、记名的麻烦）</p>
+<p><strong>重写：</strong>当子类继承自父类的相同方法，输入数据一样，但要做出有别于父类的响应时，你就要覆盖父类方法。</p>
+<h2 id="方法重载（Overload）"><a href="#方法重载（Overload）" class="headerlink" title="方法重载（Overload）"></a>方法重载（Overload）</h2><p>如果多个方法（比如 <code>StringBuilder</code> 的构造方法）有<strong>相同的名字</strong>、<strong>不同的参数</strong>， 便产生了<strong>重载</strong>。</p>
+<p><strong>规则：</strong></p>
+<ol>
+<li>方法名：必须相同</li>
+<li>形参列表：必须不同（形参类型 或 个数 或 顺序，至少一种不一样，参数名无所谓）</li>
+<li>返回类型：无要求，不是方法重载的必要条件。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">StringBuilder</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br><span class="hljs-type">StringBuilder</span> <span class="hljs-variable">sb2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>(<span class="hljs-string">&quot;HelloWorld&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>编译器必须挑选出具体执行哪个方法，它通过用各个方法给出的参数类型与特定方法调用所使用的值类型进行匹配来挑选出相应的方法。 如果编译器找不到匹配的参数， 就会产生编译时错误， 因为根本不存在匹配， 或者没有一个比其他的更好（这个过程被称为**重载解析(overloading resolution)**）。Java 允许重载任何方法， 而不只是构造器方法。</p>
+<p>综上：重载就是同一个类中多个同名方法根据不同的传参来执行不同的逻辑处理。</p>
+<h2 id="方法重写（Override）"><a href="#方法重写（Override）" class="headerlink" title="方法重写（Override）"></a>方法重写（Override）</h2><p>重写发生在运行期，是子类对父类的允许访问的方法的实现过程进行重新编写。</p>
+<p><strong>要求：</strong></p>
+<ol>
+<li><strong>方法名、参数列表</strong>必须相同。</li>
+<li>子类方法<strong>返回值类型</strong>应比父类方法返回值类型更小或相等。</li>
+<li><strong>抛出的异常范围</strong>小于等于父类。</li>
+<li><strong>访问修饰符范围</strong>大于等于父类。</li>
+<li>如果父类方法访问修饰符为 <code>private</code>&#x2F;<code>final</code>&#x2F;<code>static</code> 则子类就不能重写该方法，但是被<code>static</code>修饰的方法能够被再次声明。</li>
+<li>构造方法无法被重写。</li>
+</ol>
+<p><strong>综上：</strong>重写就是子类对父类方法的重新改造，外部样子不能改变，内部逻辑可以改变。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<thead>
+<tr>
+<th>区别点</th>
+<th>重载方法</th>
+<th>重写方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发生范围</td>
+<td>同一个类</td>
+<td>子类</td>
+</tr>
+<tr>
+<td>参数列表</td>
+<td>必须修改</td>
+<td>一定不能修改</td>
+</tr>
+<tr>
+<td>返回类型</td>
+<td>可修改</td>
+<td>子类方法返回值类型应比父类方法返回值类型更小或相等</td>
+</tr>
+<tr>
+<td>异常</td>
+<td>可修改</td>
+<td>子类方法声明抛出的异常类应比父类方法声明抛出的异常类更小或相等；</td>
+</tr>
+<tr>
+<td>访问修饰符</td>
+<td>可修改</td>
+<td>一定不能做更严格的限制（可以降低限制）</td>
+</tr>
+<tr>
+<td>发生阶段</td>
+<td>编译期</td>
+<td>运行期</td>
+</tr>
+</tbody></table>
+<p><strong>方法的重写要遵循“两同两小一大”</strong>（以下内容摘录自《疯狂 Java 讲义》，<a target="_blank" rel="noopener" href="https://github.com/Snailclimb/JavaGuide/issues/892">issue#892open in new window</a> ）：</p>
+<ul>
+<li>“两同”即方法名相同、形参列表相同；</li>
+<li>“两小”指的是子类方法返回值类型应比父类方法返回值类型更小或相等，子类方法声明抛出的异常类应比父类方法声明抛出的异常类更小或相等；</li>
+<li>“一大”指的是子类方法的访问权限应比父类方法的访问权限更大或相等。</li>
+</ul>
+<p>⚠关于 <strong>重写的返回值类型</strong> 这里需要额外多说明一下，上面的表述不太清晰准确：如果方法的返回类型是 void 和基本数据类型，则返回值重写时不可修改。但是如果方法的返回值是引用类型，重写时是可以返回该引用类型的子类的。</p>
+<h2 id="什么是可变长参数？"><a href="#什么是可变长参数？" class="headerlink" title="什么是可变长参数？"></a>什么是可变长参数？</h2><p>从 Java5 开始，Java 支持定义可变长参数，所谓可变长参数就是<strong>允许在调用方法时传入不定长度的参数</strong>。</p>
+<p>比如下面这个方法就可以接受 0 个或者多个参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">method1</span><span class="hljs-params">(String... args)</span> &#123;<br>   <span class="hljs-comment">//......</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>另外，可变参数<strong>只能作为函数的最后一个参数</strong>，但其前面可以有也可以没有任何其他参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">method2</span><span class="hljs-params">(String arg1, String... args)</span> &#123;<br>   <span class="hljs-comment">//......</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>遇到方法重载的情况怎么办呢？会优先匹配固定参数还是可变参数的方法呢？</strong></p>
+<ul>
+<li>答案是会<strong>优先匹配固定参数的方法</strong>，因为固定参数的方法匹配度更高。</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">VariableLengthArgument</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printVariable</span><span class="hljs-params">(String... args)</span> &#123;<br>        <span class="hljs-keyword">for</span> (String s : args) &#123;<br>            System.out.println(s);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printVariable</span><span class="hljs-params">(String arg1, String arg2)</span> &#123;<br>        System.out.println(arg1 + arg2);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        printVariable(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>);<br>        printVariable(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">ab<br>a<br>b<br>c<br>d<br></code></pre></td></tr></table></figure>
+
+
+
+<p>另外，Java 的<strong>可变参数编译后实际会被转换成一个****数组</strong>，我们看编译后生成的 class文件就可以看出来了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">VariableLengthArgument</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">printVariable</span><span class="hljs-params">(String... args)</span> &#123;<br>        String[] var1 = args;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">var2</span> <span class="hljs-operator">=</span> args.length;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">var3</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; var3 &lt; var2; ++var3) &#123;<br>            <span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> var1[var3];<br>            System.out.println(s);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// ......</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="方法递归"><a href="#方法递归" class="headerlink" title="方法递归"></a>方法递归</h1><h2 id="方法递归调用内存分析"><a href="#方法递归调用内存分析" class="headerlink" title="方法递归调用内存分析"></a>方法递归调用内存分析</h2><p><img src="https://pub-e9bde05ffea74978a0ce3b387e7ee1fd.r2.dev/2024/08/%E6%96%B9%E6%B3%95%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8.png" srcset="/img/loading.gif" lazyload alt="方法递归调用"></p>
+<h2 id="重要规则"><a href="#重要规则" class="headerlink" title="重要规则"></a>重要规则</h2><ol>
+<li>执行一个方法时，就创建一个新的受保护的独立空间（栈空间）</li>
+<li>方法的局部变量是独立的，不会相互影响</li>
+<li>如果方法中使用的是引用类型变量（比如数组、对象），就会共享该引用类型的数据</li>
+<li>递归必须向退出递归的条件逼近，否则将无限递归，出现<code>StackOverflowError</code>，死龟了</li>
+<li>当一个方法执行完毕，或者遇到<code>return</code>，就会返回，遵守谁调用就将结果返回给谁，同时当方法执行完毕或返回时，该方法也就执行完毕。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//一般形式</span><br>func(mode)&#123;    <br>    <span class="hljs-keyword">if</span>(endCondition) &#123;      <span class="hljs-comment">//递归出口</span><br>          end;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>         func(mode_small)  <span class="hljs-comment">//调用本身，递归</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>经典算法题：八皇后问题</p>
+<h1 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h1><p>在 java 编程中，主要的变量就是<strong>属性（成员变量）</strong>和<strong>局部变量</strong>。</p>
+<h2 id="java作用域的规则"><a href="#java作用域的规则" class="headerlink" title="java作用域的规则"></a>java作用域的规则</h2><p>属性和局部变量可以重名，访问时遵循就近原则</p>
+<h2 id="全局变量（属性-成员变量）"><a href="#全局变量（属性-成员变量）" class="headerlink" title="全局变量（属性\成员变量）"></a>全局变量（属性\成员变量）</h2><ol>
+<li>作用域为整个整体；</li>
+<li>可以不赋值，直接使用（因为有默认值）；</li>
+<li><strong>生命周期较长</strong>，伴随着对象创建而创建、销毁而销毁；</li>
+<li>可以被本类使用，或其他类使用（通过对象调用）；</li>
+<li>可以加修饰符。</li>
+</ol>
+<h2 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h2><ol>
+<li>一般是指在成员方法内定义的变量。（后面讲的{代码块}中的变量也是局部变量），作用域为定义它的代码块中；</li>
+<li>必须赋值后，才能使用（因为没有默认值）；</li>
+<li><strong>生命周期较短</strong>，伴随它的代码块的执行而创建、结束而销毁，即在一次方法调用过程中；</li>
+<li>只能在本类对应的方法中使用；</li>
+<li>不可以加修饰符。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ScopeTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Person</span> <span class="hljs-variable">p1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();<br>        <span class="hljs-type">T</span> <span class="hljs-variable">t1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">T</span>();<br>           <br>        t1.test(); <span class="hljs-comment">// 第1种跨类访问对象属性的方式</span><br><br>                t1.test2(p1); <span class="hljs-comment">// 第2种跨类访问对象属性的方式</span><br><br>        &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">T</span> &#123;<br><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">Person</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span>();<br>        System.out.println(p.name);<br>    &#125;    <br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test2</span><span class="hljs-params">(Person p)</span> &#123;<br>        System.out.println(p.name);<br>    &#125;<br><br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> &#123;<br>    <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;kobe&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="构造方法-x2F-构造器"><a href="#构造方法-x2F-构造器" class="headerlink" title="构造方法&#x2F;构造器"></a>构造方法&#x2F;构造器</h1><p>构造方法，是类的一种特殊方法，主要作用是完成<strong>对新对象的初始化</strong>。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs abnf">访问修饰符 方法名(形参列表) &#123; 方法体<span class="hljs-comment">; &#125;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><ol>
+<li><p>没有返回值（不用也不能写void）</p>
+</li>
+<li><p>方法名 和 类名 相同</p>
+</li>
+<li><p>参数列表 和 成员方法 一样的规则</p>
+</li>
+<li><p>构造器是完成对象的初始化，并不是创建对象</p>
+</li>
+<li><p>创建对象时，系统会自动调用该类的构造器</p>
+</li>
+<li><p>如果程序员没有定义构造器，系统会自动给类生成一个默认无参构造器（也叫默认构造器），比如 Person(){}。（可使用<code>javap</code>反编译看看）</p>
+</li>
+<li><ol>
+<li><img src="https://pub-e9bde05ffea74978a0ce3b387e7ee1fd.r2.dev/2024/08/%E9%BB%98%E8%AE%A4%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E5%99%A8.png" srcset="/img/loading.gif" lazyload alt="默认无参构造器"></li>
+</ol>
+</li>
+<li><p>一旦自定义了构造器，默认的构造器就被覆盖，就不能再使用默认的无参构造器，除非显式定义一下，即：Dog(){} </p>
+</li>
+<li><ol>
+<li><img src="https://pub-e9bde05ffea74978a0ce3b387e7ee1fd.r2.dev/2024/08/%E6%9C%89%E5%8F%82%E6%9E%84%E9%80%A0%E5%99%A8.png" srcset="/img/loading.gif" lazyload alt="有参构造器"></li>
+</ol>
+</li>
+</ol>
+<hr>
+<p>参考</p>
+<ul>
+<li>韩顺平Java基础课</li>
+<li><a target="_blank" rel="noopener" href="https://javaguide.cn/java/basis/java-basic-questions-01.html">Java基础常见面试题总结(上)</a></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/" class="print-no-link">#Java</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Java 方法</div>
+      <div>http://example.com/2022/06/07/Java-方法/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Neo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年6月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/12/26/neo-first-blog/" title="Github + hexo 搭建博客过程">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Github + hexo 搭建博客过程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/25/Java-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="Java 数据类型">
+                        <span class="hidden-mobile">Java 数据类型</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
