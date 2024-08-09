@@ -19,26 +19,24 @@
   <meta name="author" content="Neo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="文本处理PyPEF2：处理pdf文件的工具集 支持获取信息、分隔&#x2F;整合文件、加密解密等 完全Python语言实现，不需要额外依赖，功能稳定 NLTK：自然语言文本处理第三方库 支持语言文本分类、标记、语法句法、语义解析等 最好的Python自然语言处理库 Python-docx：创建或更新Microsoft Word文件的第三方库 提供创建或更新.doc .docx等文件的计算功能 增加">
+    <meta name="description" content="1. 查看防火墙状态（是否开启）1systemctl status firewalld  2. 开启防火墙1systemctl start firewalld  3. 查看所有开启的端口1firewall-cmd --list-ports  注：启动防火墙后，默认没有开启任何端口，需要手动开启端口 4. 防火墙开启端口访问1firewall-cmd --zone&#x3D;public --add-port">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 计算生态">
-<meta property="og:url" content="https://blog-21n.pages.dev/2023/08/18/Python-%E8%AE%A1%E7%AE%97%E7%94%9F%E6%80%81/index.html">
+<meta property="og:title" content="开放端口供他人访问">
+<meta property="og:url" content="https://blog-21n.pages.dev/2023/05/23/%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/index.html">
 <meta property="og:site_name" content="KingShit">
-<meta property="og:description" content="文本处理PyPEF2：处理pdf文件的工具集 支持获取信息、分隔&#x2F;整合文件、加密解密等 完全Python语言实现，不需要额外依赖，功能稳定 NLTK：自然语言文本处理第三方库 支持语言文本分类、标记、语法句法、语义解析等 最好的Python自然语言处理库 Python-docx：创建或更新Microsoft Word文件的第三方库 提供创建或更新.doc .docx等文件的计算功能 增加">
+<meta property="og:description" content="1. 查看防火墙状态（是否开启）1systemctl status firewalld  2. 开启防火墙1systemctl start firewalld  3. 查看所有开启的端口1firewall-cmd --list-ports  注：启动防火墙后，默认没有开启任何端口，需要手动开启端口 4. 防火墙开启端口访问1firewall-cmd --zone&#x3D;public --add-port">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://pub-e9bde05ffea74978a0ce3b387e7ee1fd.r2.dev/2024/08/python-web.png">
-<meta property="article:published_time" content="2023-08-18T03:30:14.000Z">
-<meta property="article:modified_time" content="2024-08-09T17:22:50.513Z">
+<meta property="article:published_time" content="2023-05-23T09:46:00.000Z">
+<meta property="article:modified_time" content="2024-08-09T17:42:33.509Z">
 <meta property="article:author" content="Neo">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pub-e9bde05ffea74978a0ce3b387e7ee1fd.r2.dev/2024/08/python-web.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Python 计算生态 - KingShit</title>
+  <title>开放端口供他人访问 - KingShit</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -204,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Python 计算生态"></span>
+            <span id="subtitle" data-typed-text="开放端口供他人访问"></span>
           
         </div>
 
@@ -215,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-18 11:30" pubdate>
-          2023年8月18日 中午
+        <time datetime="2023-05-23 17:46" pubdate>
+          2023年5月23日 下午
         </time>
       </span>
     
@@ -227,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          151 字
         
       </span>
     
@@ -238,7 +236,7 @@
         
         
         
-          18 分钟
+          2 分钟
         
       </span>
     
@@ -275,224 +273,29 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Python 计算生态</h1>
+            <h1 id="seo-header">开放端口供他人访问</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h1><p>PyPEF2：处理pdf文件的工具集</p>
-<p>支持获取信息、分隔&#x2F;整合文件、加密解密等</p>
-<p>完全Python语言实现，不需要额外依赖，功能稳定</p>
-<p>NLTK：自然语言文本处理第三方库</p>
-<p>支持语言文本分类、标记、语法句法、语义解析等</p>
-<p>最好的Python自然语言处理库</p>
-<p>Python-docx：创建或更新Microsoft Word文件的第三方库</p>
-<p>提供创建或更新.doc .docx等文件的计算功能</p>
-<p>增加并配置段落、图片、表格、文字等，功能全面</p>
-<h1 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h1><p><strong>Numpy</strong>：表达N维数组的最基础库</p>
-<ul>
-<li>C语言实现，对外接口是python语言，计算速度优异</li>
-<li>数据分析及科学计算的基础库</li>
-<li>提供直接的矩阵运算、广播函数、线性代数等功能</li>
-<li>Numpy最基础单元是一个数组，数组是一个变量</li>
-</ul>
-<p><strong>Pandas</strong>：Python数据分析高层次应用库</p>
-<ul>
-<li><p>操作索引即操作数据</p>
-</li>
-<li><p>Python最主要的数据分析功能库，基于Numpy开发</p>
-</li>
-<li><p>Pandas核心提供两个数据结构：</p>
-</li>
-<li><ul>
-<li>Series &#x3D; 索引 + 一维数据</li>
-<li>DataFrame &#x3D; 行列索引 + 二维数据</li>
-</ul>
-</li>
-</ul>
-<p>Pandas 库通过扩展了对一维和二维数据的表示，因而能够形成更高层次对数据的操作，简化数据分析的运行</p>
-<p><strong>SciPy</strong>：数学、科学和工程计算功能库</p>
-<ul>
-<li>提供一批数学算法及工程数据运算功能</li>
-<li>雷系Matlab，可用于如傅里叶变换、信号处理等应用</li>
-<li>Python最主要的科学计算功能库，基于Numpy开发</li>
-</ul>
-<h1 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h1><p><strong>Matplotlib</strong>：高质量的二维数据可视化功能库</p>
-<ul>
-<li>通过 matplotlib.pyplot 子库调用各可视化效果（把所有有效的可视化展示方法汇集到一个子库中，相当于各个子库的快捷方式）</li>
-<li>Python最主要的数据可视化功能库，基于Numpy开发</li>
-</ul>
-<p><strong>Seaborn</strong>：统计类数据可视化功能库</p>
-<ul>
-<li>提供了一批高层次统计类数据可视化展示效果</li>
-<li>主要展示数据间分布、分类和线性关系等内容</li>
-<li>基于Matplotlib开发，支持Numpy和Pandas</li>
-</ul>
-<p><strong>Mayavi</strong>：三维科学数据可视化功能库</p>
-<ul>
-<li>提供了一批易用的3D科学计算数据可视化展示效果</li>
-<li>目前版本是Mayavi2，三维可视化最主要的第三方库</li>
-<li>支持Numpy、TVTK、Traits、Envisage等第三方库</li>
-</ul>
-<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p><strong>Scikit-learn</strong>：机器学习方法工具集</p>
-<ul>
-<li>提供聚类、分类、回归、强化学习等计算功能</li>
-<li>机器学习最基本且最优秀的Python第三方库</li>
-</ul>
-<p><strong>TensorFlow</strong>：AlphaGo背后的机器学习计算框架</p>
-<ul>
-<li>谷歌公司推动的开源机器学习框架</li>
-<li>将数据流图作为基础，图节点代表运算，边代表张亮</li>
-<li>应用机器学习方法的一种方式，支撑谷歌人工智能应用</li>
-</ul>
-<p>深度学习</p>
-<p><strong>MXNet</strong>：基于神经网络的深度学习计算框架</p>
-<ul>
-<li>可用于自动驾驶、机器翻译、语音识别等众多领域</li>
-<li>Python最重要的深度学习计算框架</li>
-</ul>
-<h1 id="从Web解析到网络空间"><a href="#从Web解析到网络空间" class="headerlink" title="从Web解析到网络空间"></a>从Web解析到网络空间</h1><h2 id="网络爬虫"><a href="#网络爬虫" class="headerlink" title="网络爬虫"></a>网络爬虫</h2><p>（如何爬下来）</p>
-<p><strong>Requests</strong></p>
-<ul>
-<li>提供了简单易用的类HTTP协议网络爬虫功能</li>
-<li>支持连接池、SSL、Cookies、HTTP(S)代理等</li>
-<li>Python最主要的页面级网络爬虫功能库</li>
-</ul>
-<p><strong>Scrapy</strong>：优秀的网络爬虫框架</p>
-<ul>
-<li>提供了构建网络爬虫系统的框架功能</li>
-<li>框架可理解为功能半成品，很多基础功能已完成，只需要用户进行扩展开发或者额外配置</li>
-<li>支持批量和定时网页爬取、提供数据处理流程等</li>
-<li>Python最主要且最专业的网络爬虫框架</li>
-</ul>
-<p><strong>pyspider</strong>：</p>
-<ul>
-<li>提供完整的网页爬取系统构建功能</li>
-<li>支持数据库后端、消息队列、优先级、分布式架构等</li>
-<li>Python重要的网络爬虫类第三方库</li>
-</ul>
-<h2 id="Web-信息提取"><a href="#Web-信息提取" class="headerlink" title="Web 信息提取"></a>Web 信息提取</h2><p>（爬下来后如何解析html和xml等内容）</p>
-<p><strong>Beautiful Soup</strong>：HTML和XML的解析库</p>
-<ul>
-<li>又名beautifulsoup4或bs4，可以加载多种解析引擎</li>
-<li>常与网络爬虫库搭配使用，如Scrapy、request等</li>
-<li>将HTML页面以树形结构进行组织，通过下行、上行、平行遍历解析其中的内容</li>
-</ul>
-<p><strong>Re</strong>：正则表达式解析和处理功能库</p>
-<ul>
-<li>提供了定义和解析正则表达式的一批通用功能</li>
-<li>可用于各类场景，包括定点的Web信息提取</li>
-<li>Python主要标准库之一</li>
-</ul>
-<p><strong>Python-Goose</strong>：提取文章类型Web页面的功能库</p>
-<ul>
-<li>提供了对Web页面中文章信息&#x2F;视频等元数据的提取功能</li>
-<li>针对特定类型Web页面，应用覆盖面较广</li>
-<li>Python最主要的Web信息提取库</li>
-</ul>
-<h2 id="Web-网站开发"><a href="#Web-网站开发" class="headerlink" title="Web 网站开发"></a>Web 网站开发</h2><p><strong>Django</strong>：最流行的Web应用框架</p>
-<ul>
-<li>提供了构建Web系统的基本应用框架</li>
-<li>MTV模式：模型（model）、模板（Template）、视图（Views）</li>
-<li>Python最重要的Web应用框架，略微复杂，适合比较专业的网站构建</li>
-</ul>
-<p><img src="https://pub-e9bde05ffea74978a0ce3b387e7ee1fd.r2.dev/2024/08/python-web.png" srcset="/img/loading.gif" lazyload alt="python-web"></p>
-<p><strong>Pyramid</strong>：规模适中的Web应用框架</p>
-<ul>
-<li>提供了简单方便构建Web系统的应用框架</li>
-<li>规模适中，适合快速构建并适度扩展类应用</li>
-<li>Python产品级Web应用框架，起步简单可扩展性好</li>
-</ul>
-<p><strong>Flask</strong>：Web应用开发微框架</p>
-<ul>
-<li>提供了最简单构建Web系统的应用框架</li>
-<li>特点是：简单、规模小、快速</li>
-<li>Django &gt; Pyramid &gt; Flask</li>
-</ul>
-<h2 id="网络应用开发"><a href="#网络应用开发" class="headerlink" title="网络应用开发"></a>网络应用开发</h2><p><strong>WeRoBot</strong>：微信公众号开发框架</p>
-<ul>
-<li>提供了解析微信服务器消息及反馈消息的功能</li>
-<li>建立微信机器人的重要技术手段</li>
-</ul>
-<p><strong>aip</strong>：百度AI开放平台接口</p>
-<ul>
-<li>提供了访问百度AI服务的Python功能接口</li>
-<li>语音、人脸、OCR、NLP、知识图谱、图像搜索等领域</li>
-<li>Python百度AI应用的最主要方式</li>
-</ul>
-<p><strong>MyQR</strong>：二维码生成第三方库</p>
-<ul>
-<li>提供了生成二维码的系列功能</li>
-<li>基本二维码、艺术二维码和动态二维码</li>
-</ul>
-<h1 id="从人机交互到艺术设计"><a href="#从人机交互到艺术设计" class="headerlink" title="从人机交互到艺术设计"></a>从人机交互到艺术设计</h1><h2 id="图形用户界面"><a href="#图形用户界面" class="headerlink" title="图形用户界面"></a>图形用户界面</h2><p><strong>PyQt5</strong>：Qt开发框架的Python接口</p>
-<ul>
-<li>提供了创建Qt5程序的Python API接口</li>
-<li>Qt是非常成熟的跨平台桌面应用开发系统，完备GUI</li>
-<li>推荐的Python GUI开发第三方库</li>
-</ul>
-<p><strong>wxPython</strong>：跨平台GUI开发框架</p>
-<ul>
-<li>提供了专用于Python的跨平台GUI开发框架</li>
-<li>理解数据类型与索引的关系，操作索引即操作数据</li>
-<li>Python最主要的数据分析功能库，基于Numpy开发</li>
-</ul>
-<p><strong>PyGObject</strong>：使用GTK+开发GUI的功能库</p>
-<ul>
-<li>提供了整合GTK+、WebKitGTK+等库的功能</li>
-<li>GTK+：跨平台的一种用户图形界面GUI框架</li>
-<li>实例：Anaconda采用该库开发GUI</li>
-</ul>
-<h2 id="游戏开发"><a href="#游戏开发" class="headerlink" title="游戏开发"></a>游戏开发</h2><p><strong>PyGame</strong>：简单的游戏开发功能库</p>
-<ul>
-<li>提供了基于SDL的简单游戏开发功能及实现引擎</li>
-<li>理解游戏对外部输入的响应机制及角色构建和交互机制</li>
-<li>Python游戏入门最主要的第三方库</li>
-</ul>
-<p><strong>Panda3D</strong>：开源、跨平台的3D渲染和游戏开发库</p>
-<ul>
-<li>一个3D游戏引擎，提供Python和C++接口</li>
-<li>支持很多先进特性：法线贴图、光泽贴图、卡通渲染等</li>
-<li>由迪士尼和卡尼吉梅隆大学共同开发</li>
-</ul>
-<p><strong>cocos2d</strong>：构建2D游戏和图形界面交互式应用的框架</p>
-<ul>
-<li>提供了基于OpenGL的游戏开发图形渲染功能</li>
-<li>支持GPU加速，采用树形结构分层管理游戏对象类型</li>
-<li>适用于2D专业级游戏开发</li>
-</ul>
-<h2 id="虚拟现实"><a href="#虚拟现实" class="headerlink" title="虚拟现实"></a>虚拟现实</h2><p><strong>VR Zero</strong>：在树莓派上开发VR应用的Python库</p>
-<ul>
-<li>提供大量与VR开发相关的功能</li>
-<li>针对树莓派的VR开发库，支持设备小型化，配置简单化</li>
-<li>适合初学者实践VR开发及应用</li>
-</ul>
-<p><strong>pyovr</strong>：Oculus Rift的Python开发接口</p>
-<ul>
-<li>针对Oculus VR设备的Python开发库</li>
-<li>基于成熟的VR设备，提供全套文档，工业级应用设备</li>
-<li>Python+虚拟现实领域探索的一种思路</li>
-</ul>
-<p><strong>Vizard</strong>：基于Python的通用VR开发引擎</p>
-<ul>
-<li>专业的企业级虚拟现实开发引擎</li>
-<li>提供详细的官方文档</li>
-<li>支持多种主流的VR硬件设备，具有一定通用性</li>
-</ul>
-<h2 id="图形艺术"><a href="#图形艺术" class="headerlink" title="图形艺术"></a>图形艺术</h2><p><strong>Quads</strong>：迭代的艺术</p>
-<ul>
-<li>对图片进行四分迭代，形成像素风</li>
-<li>可以生成动图或静图图像</li>
-<li>简单易用，具有很高的展示度</li>
-</ul>
-<p><strong>ascii_art</strong>：ASCII艺术库</p>
-<ul>
-<li>将普通图片转为ASCII艺术风格</li>
-<li>输出可以是纯文本或彩色文本</li>
-<li>可采用图片格式输出</li>
-</ul>
-<p><strong>turtle</strong>：海龟绘图体系</p>
+                <h2 id="1-查看防火墙状态（是否开启）"><a href="#1-查看防火墙状态（是否开启）" class="headerlink" title="1. 查看防火墙状态（是否开启）"></a>1. 查看防火墙状态（是否开启）</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">systemctl status firewalld<br></code></pre></td></tr></table></figure>
 
+<h2 id="2-开启防火墙"><a href="#2-开启防火墙" class="headerlink" title="2. 开启防火墙"></a>2. 开启防火墙</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">systemctl start firewalld<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-查看所有开启的端口"><a href="#3-查看所有开启的端口" class="headerlink" title="3. 查看所有开启的端口"></a>3. 查看所有开启的端口</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">firewall-cmd --list-ports<br></code></pre></td></tr></table></figure>
+
+<p>注：启动防火墙后，默认没有开启任何端口，需要手动开启端口</p>
+<h2 id="4-防火墙开启端口访问"><a href="#4-防火墙开启端口访问" class="headerlink" title="4. 防火墙开启端口访问"></a>4. 防火墙开启端口访问</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">firewall-cmd --zone=public --add-port=80/tcp --permanent<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>--zone</code>  #作用域 </li>
+<li><code>--add-port=80/tcp</code>   #添加端口，格式为：端口&#x2F;通讯协议 </li>
+<li><code>--permanent</code>    #永久生效，没有此参数重启后失效</li>
+</ul>
+<p>注：开启后需要重启防火墙才生效</p>
+<h2 id="5-重启防火墙"><a href="#5-重启防火墙" class="headerlink" title="5. 重启防火墙"></a>5. 重启防火墙</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">firewall-cmd --reload<br></code></pre></td></tr></table></figure>
+
+<h2 id="6-再次查看所有开启的端口"><a href="#6-再次查看所有开启的端口" class="headerlink" title="6. 再次查看所有开启的端口"></a>6. 再次查看所有开启的端口</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">firewall-cmd --list-ports<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -510,7 +313,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Python/" class="category-chain-item">Python</a>
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
   
   
 
@@ -525,7 +328,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Python/" class="print-no-link">#Python</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
       
     </div>
   
@@ -537,8 +340,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Python 计算生态</div>
-      <div>https://blog-21n.pages.dev/2023/08/18/Python-计算生态/</div>
+      <div>开放端口供他人访问</div>
+      <div>https://blog-21n.pages.dev/2023/05/23/开放端口/</div>
     </div>
     <div class="license-meta">
       
@@ -550,7 +353,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年8月18日</div>
+          <div>2023年5月23日</div>
         </div>
       
       
@@ -582,9 +385,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/17/Python%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Python 访问数据库">
+                      <a href="/2023/08/18/Python-%E8%AE%A1%E7%AE%97%E7%94%9F%E6%80%81/" title="Python 计算生态">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python 访问数据库</span>
+                        <span class="hidden-mobile">Python 计算生态</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -592,8 +395,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/23/%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3/" title="开放端口供他人访问">
-                        <span class="hidden-mobile">开放端口供他人访问</span>
+                      <a href="/2023/03/08/Redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="Redis数据类型">
+                        <span class="hidden-mobile">Redis数据类型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
