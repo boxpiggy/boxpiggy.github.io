@@ -27,7 +27,7 @@
 <meta property="og:description" content="前言在线人数统计有多种实现方式，本文使用 Redis 的有序集合数据类型来实现。 核心方法：zadd、zrangeByScore、zremrangeByScore、zrem。 实现流程如何认定用户是否在线？认定用户在线的条件一般跟网站有关，如果网站需要登录才能进入，那么这种网站就是根据用户的token令牌有效性判断是否在线； 如果网站是公开的，是那种不需要登录就可以浏览的，那么这种网站一般就需要自">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-09T16:42:00.000Z">
-<meta property="article:modified_time" content="2024-08-09T16:44:08.973Z">
+<meta property="article:modified_time" content="2024-08-09T17:23:20.103Z">
 <meta property="article:author" content="Neo">
 <meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary_large_image">
@@ -348,6 +348,34 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/" class="category-chain-item">Redis</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
     <div class="post-meta">
